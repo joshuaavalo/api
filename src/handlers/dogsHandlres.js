@@ -38,8 +38,9 @@ const getHandler = async (req, res) => {
 
 const getDetailHandler = async (req, res) => {
     const { id } = req.params;
+    const source = isNaN(id)? "dataBase" : "api";
     try {
-        const dog = await getDetail(id);
+        const dog = await getDetail(id, source); 
         res.status(200).json(dog);
     } catch (error) {
         res.status(404).json({error:error.message});
