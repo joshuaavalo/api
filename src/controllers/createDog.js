@@ -24,8 +24,14 @@ const createDog = async (id, name, height_min, weight_min, height_max, weight_ma
             createdInDB
             
         });
+        // const temp = await Temperaments.findAll({
+        //     where: {
+        //         name: temperaments,
+        //     }
+        // })
+        // if(temp.length === 0){throw new Error("no hay temps")}
         
-        newDog.addTemperaments(temperaments);
+        // await newDog.addTemperaments(temp);
         return newDog; // Devolver el nuevo perro creado en la respuesta
     } catch (error) {
         throw error; // Lanzar el error para que pueda ser capturado y manejado correctamente

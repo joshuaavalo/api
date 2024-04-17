@@ -20,7 +20,7 @@ const getDogs = async () => {
             }]
         });
         const dogsAPI = [];
-        for (let page = 1; page <= 5; page++) {
+        
             const url = `${API_URL}?api_key=${API_KEY}`;
             try {
                 const response = await axios.get(url);
@@ -33,7 +33,7 @@ const getDogs = async () => {
             } catch (error) {
                 console.error('Error al obtener datos de la API:', error);
             }
-        }
+        
       
         const dogsApiF = dogsAPI.flat(1); // cuando hay un array dentro de un array  lo coloca en u array plano.
         return [...dogsFromDB, ...dogsApiF]; 

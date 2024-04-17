@@ -69,7 +69,8 @@ function limpiarRespuesta(respuesta) {
         weight_min: parseFloat(breeds[0].weight.metric.split(' - ')[0]),
         weight_max: parseFloat(breeds[0].weight.metric.split(' - ')[1]),
         life_span: breeds[0].life_span,
-        image: url
+        temperament: breeds[0].temperament,
+        image: url,
       };
   
       return perroLimpiado;
